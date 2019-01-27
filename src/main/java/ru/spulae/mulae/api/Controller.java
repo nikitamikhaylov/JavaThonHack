@@ -89,6 +89,7 @@ public class Controller {
   @PostMapping(value = "/get_fundraisers", produces = "application/json;charset=utf-8")
   public String getFundraisers (
       @RequestParam("name") String name) {
+    System.out.println("eala");
     ArrayList<String> answer = new ArrayList<>();
     for (Fundraising fundraising : fundraisers) {
       System.out.println(fundraising.getParticipants().toString());
@@ -99,7 +100,9 @@ public class Controller {
       }
     }
     Gson gson = new Gson();
-    return gson.toJson(answer);
+    String res = gson.toJson(answer);
+    System.out.println("keks" + res);
+    return res;
   }
 
   static class CreateFundraisingParams {
