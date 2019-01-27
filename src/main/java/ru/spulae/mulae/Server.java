@@ -11,7 +11,7 @@ public class Server {
         List participants = new LinkedList();
         participants.add(p1);
         participants.add(p2);
-        Fundraising fund = new Fundraising(participants);
+        Fundraising fund = new Fundraising("kaliiik", participants);
         fund.addPayment(p1, payment);
         fund.setAgreement(p1);
         fund.setAgreement(p2);

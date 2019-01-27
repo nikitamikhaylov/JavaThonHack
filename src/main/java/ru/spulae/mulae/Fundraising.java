@@ -6,12 +6,15 @@ import java.util.List;
 import java.util.Map;
 
 public class Fundraising {
+
+    private String name;
     private List<Person> participants;
     private Map<Person, List<Payment>> payments;
     private Map<Person, Boolean> isBlocked;
     private Map<Person, Boolean> isAgreedToCalculate;
 
-    public Fundraising(List<Person> participants) {
+    public Fundraising(String name, List<Person> participants) {
+        this.name = name;
         this.participants = participants;
         this.payments = new HashMap<Person, List<Payment>>();
         this.isBlocked = new HashMap<Person, Boolean>();
@@ -22,6 +25,14 @@ public class Fundraising {
             this.isBlocked.put(current, false);
             this.isAgreedToCalculate.put(current, false);
         }
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public List<Person> getParticipants() {
+        return participants;
     }
 
     public void setBlock(Person person) {
